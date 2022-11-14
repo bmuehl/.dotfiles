@@ -1,7 +1,24 @@
-# ~./dotfiles/.stow.local.ignore: Files to be ignored by gnu 'stow'
+# Comments and blank lines are allowed.
+
+RCS
+.+,v
+
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
 
 \.git
+\.gitignore
 
-\Brewfile
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
 
 ^/README.*
+^/LICENSE.*
+^/COPYING
+
+\homebrew
