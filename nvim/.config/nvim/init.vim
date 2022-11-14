@@ -22,10 +22,21 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'https://github.com/nvim-tree/nvim-web-devicons' " Web Dev Icons
 Plug 'https://github.com/romgrk/barbar.nvim' " Buffer Tabs
 Plug 'https://github.com/ggandor/leap.nvim' " Leap navigation
-Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}  " Auto Completion
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Syntax and indentation support
-Plug 'evanleck/vim-svelte', {'branch': 'main'} " Svelte
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'} " TailwindCSS
+
+" LSP
+Plug 'https://github.com/neovim/nvim-lspconfig'
+Plug 'https://github.com/williamboman/mason.nvim'
+Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
+" Autocomplete
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 set encoding=UTF-8
 
@@ -59,12 +70,6 @@ nnoremap <silent>    <M-c> <Cmd>BufferClose<CR>
 
 " Git Signs
 nnoremap <C-b> :Gitsigns toggle_current_line_blame<CR>
-
-" Coc
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 
 colorscheme nord
