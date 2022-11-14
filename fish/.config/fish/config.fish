@@ -17,5 +17,3 @@ end
 set -gx PNPM_HOME "$HOME/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
-
-set -gx XDG_CONFIG_HOME "$HOME/.config"
