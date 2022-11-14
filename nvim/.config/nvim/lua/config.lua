@@ -14,3 +14,9 @@ require('lualine').setup {
   }
 }
 require('leap').add_default_mappings()
+require('nvim-treesitter.configs').setup {
+	ensure_installed = "all",
+	highlight = {
+		enable = true
+	}
+}

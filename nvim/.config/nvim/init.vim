@@ -23,7 +23,7 @@ Plug 'https://github.com/nvim-tree/nvim-web-devicons' " Web Dev Icons
 Plug 'https://github.com/romgrk/barbar.nvim' " Buffer Tabs
 Plug 'https://github.com/ggandor/leap.nvim' " Leap navigation
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}  " Auto Completion
-Plug 'sheerun/vim-polyglot' " Syntax and indentation support
+Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Syntax and indentation support
 Plug 'evanleck/vim-svelte', {'branch': 'main'} " Svelte
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'} " TailwindCSS
 
