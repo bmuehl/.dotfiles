@@ -17,7 +17,21 @@ null_ls.setup({
 	sources = {
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-		formatting.prettier, -- js/ts formatter
+		formatting.prettierd.with({
+			filetypes = {
+				"html",
+				"json",
+				"svelte",
+				"markdown",
+				"css",
+				"scss",
+				"sass",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+			},
+		}), -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.phpcsfixer.with({
 			args = {
