@@ -42,3 +42,8 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- git blame
 keymap.set("n", "<C-b>", ":Gitsigns toggle_current_line_blame<CR>")
+
+-- barbar
+keymap.set("n", "<C-,>", "<cmd>BufferPrevious<CR>") -- move to previous
+keymap.set("n", "<C-.>", "<cmd>BufferNext<CR>") -- move to next
+keymap.set("n", "<C-c>", "<cmd>BufferClose<CR>") -- Close buffer
