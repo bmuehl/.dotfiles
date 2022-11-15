@@ -4,13 +4,15 @@ if not mason_lspconfig_status then
 	return
 end
 
+local lspconfig = require("lspconfig")
+
 -- auto setup mason lsp
 mason_lspconfig.setup_handlers({
 	function(server_name) -- default handler (optional)
-		require("lspconfig")[server_name].setup({})
+		lspconfig[server_name].setup({})
 	end,
 	["sumneko_lua"] = function()
-		require("lspconfig")["sumneko_lua"].setup({
+		lspconfig["sumneko_lua"].setup({
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -28,7 +30,7 @@ mason_lspconfig.setup_handlers({
 		})
 	end,
 	["emmet_ls"] = function()
-		require("lspconfig")["emmet_ls"].setup({
+		lspconfig["emmet_ls"].setup({
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 	end,
