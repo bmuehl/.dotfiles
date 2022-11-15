@@ -23,6 +23,7 @@ keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- nvim-tree
 keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>") -- file explorer
+keymap.set("n", "<leader><C-f>", ":NvimTreeToggle<CR>") -- file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
