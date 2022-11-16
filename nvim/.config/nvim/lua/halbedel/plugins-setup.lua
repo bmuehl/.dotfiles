@@ -34,6 +34,8 @@ return packer.startup(function(use)
 
 	use("shaunsingh/nord.nvim") -- preferred colorscheme
 
+	use("xiyaowong/nvim-transparent") -- transparent background
+
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings ysw)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
@@ -53,7 +55,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- buffer tabs
-	use("romgrk/barbar.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
