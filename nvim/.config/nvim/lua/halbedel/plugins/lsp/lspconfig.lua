@@ -34,6 +34,7 @@ mason_lspconfig.setup_handlers({
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 	end,
+	["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
