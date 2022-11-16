@@ -34,8 +34,6 @@ return packer.startup(function(use)
 
 	use("shaunsingh/nord.nvim") -- preferred colorscheme
 
-	use("xiyaowong/nvim-transparent") -- transparent background
-
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings ysw)
 	use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
