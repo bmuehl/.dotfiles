@@ -41,6 +41,7 @@ null_ls.setup({
 				"$FILENAME",
 			},
 		}), -- php formatter
+		formatting.google_java_format, -- java formatting
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js
 			condition = function(utils)
