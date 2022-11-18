@@ -33,6 +33,7 @@ null_ls.setup({
 			},
 		}), -- js/ts formatter
 		formatting.stylua, -- lua formatter
+		formatting.black.with({ extra_args = { "--fast" } }), -- python formatter
 		formatting.phpcsfixer.with({
 			args = {
 				"--no-interaction",
