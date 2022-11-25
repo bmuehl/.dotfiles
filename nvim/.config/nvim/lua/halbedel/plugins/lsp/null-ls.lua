@@ -22,6 +22,7 @@ null_ls.setup({
 				"html",
 				"json",
 				"svelte",
+				"vue",
 				"markdown",
 				"css",
 				"scss",
