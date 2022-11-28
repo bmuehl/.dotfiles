@@ -44,8 +44,9 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
--- git blame
-keymap.set("n", "<C-b>", ":Gitsigns toggle_current_line_blame<CR>")
+-- gitsigns
+keymap.set("n", "<leader>bla", ":Gitsigns toggle_current_line_blame<CR>")
+keymap.set("n", "<leader>dif", ":Gitsigns diffthis<CR>")
 
 -- barbar
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>") -- move to previous
