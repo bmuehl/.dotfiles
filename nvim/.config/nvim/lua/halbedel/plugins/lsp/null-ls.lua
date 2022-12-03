@@ -39,6 +39,7 @@ null_ls.setup({
 			args = {
 				"--no-interaction",
 				"--quiet",
+				"--allow-risky=yes",
 				"fix",
 				"$FILENAME",
 			},
