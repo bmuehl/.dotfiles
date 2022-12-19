@@ -17,7 +17,7 @@ null_ls.setup({
 	sources = {
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-		formatting.prettierd.with({
+		formatting.prettier.with({
 			filetypes = {
 				"html",
 				"json",
