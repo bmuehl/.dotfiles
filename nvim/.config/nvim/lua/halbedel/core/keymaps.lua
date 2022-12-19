@@ -21,6 +21,24 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 ----------------------
+-- Remaps
+----------------------
+
+-- move selected text in visual mode with J and K
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- keep cursor in the middle when navigation up and down
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+-- for searching
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
+
+-- paste without replacing current paste buffer
+keymap.set("x", "<leader>p", '"_dP')
+
+----------------------
 -- Plugin Keybinds
 ----------------------
 
