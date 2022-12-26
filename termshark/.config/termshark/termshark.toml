@@ -1,3 +1,3 @@
 [main]
   dark-mode = true
-  theme = "nord"
+  theme-truecolor = 'nord'
