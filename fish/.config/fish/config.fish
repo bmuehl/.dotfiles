@@ -19,3 +19,6 @@ set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 
 set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx LANG "en_US.UTF-8"
+set -gx LC_ALL "en_US.UTF-8"
+set -gx LC_CTYPE "en_US.UTF-8"
