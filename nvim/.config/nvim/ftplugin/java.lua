@@ -7,7 +7,20 @@ vim.notify(vim.fn.stdpath("data"))
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
-os.execute("mkdir " .. workspace_dir)
+
+local is_dir = function(path)
+	local f = io.open(path, "r")
+	if f == nil then
+		return false
+	end
+	local _, _, code = f:read(1)
+	f:close()
+	return code == 21
+end
+
+if not is_dir(workspace_dir) then
+	os.execute("mkdir " .. workspace_dir)
+end
 
 local jdtls_install = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
 local lombok = jdtls_install .. "/lombok.jar"
