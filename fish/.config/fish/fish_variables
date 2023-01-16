@@ -4,6 +4,7 @@ SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_dev:cd\x20\x7e/Development
 SETUVAR _fish_abbr_doc:docker\x20compose
 SETUVAR _fish_abbr_g:git
+SETUVAR _fish_abbr_gc:\x2d\x2dposition\x20anywhere\x20\x2d\x2dset\x2dcursor\x20\x21\x20git\x20commit\x20\x2dm\x20\x27\x21\x27
 SETUVAR _fish_abbr_gr:\x2e/gradlew
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_n:pnpm

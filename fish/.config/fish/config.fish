@@ -1,3 +1,8 @@
+# abbreviations
+abbr -a gc --position anywhere --set-cursor 'git commit -m "%"'
+abbr -a ga --position anywhere "git add -A"
+abbr -a gp --position anywhere "git push"
+
 # bobthefish - theme config
 set -g theme_color_scheme nord
 set -g theme_nerd_fonts yes
