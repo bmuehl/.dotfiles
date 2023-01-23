@@ -28,4 +28,4 @@ set -gx LANG "en_US.UTF-8"
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LC_CTYPE "en_US.UTF-8"
 
-set -gx PHP_CS_FIXER_IGNORE_ENV # delete after php-cs-fixer update
+set -gx PHP_CS_FIXER_IGNORE_ENV true # delete after php-cs-fixer update
