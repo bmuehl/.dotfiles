@@ -32,7 +32,8 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("shaunsingh/nord.nvim") -- preferred colorscheme
+	-- TODO: currently fixed at commit becuase of bug in latest release
+	use({ "shaunsingh/nord.nvim", commit = "418e2507" }) -- preferred colorscheme
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings ysw)
