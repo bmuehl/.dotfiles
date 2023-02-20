@@ -73,3 +73,6 @@ keymap.set("n", "<leader>b", "<cmd>BufferLinePick<CR>") -- go to buffer x
 keymap.set("n", "<leader>B", "<cmd>BufferLinePickClose<CR>") -- close buffer x
 keymap.set("n", "<C-h>", "<cmd>BufferLineCloseLeft<CR>") -- close buffer on the left
 keymap.set("n", "<C-l>", "<cmd>BufferLineCloseRight<CR>") -- close buffer on the right
+
+-- lazygit
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
