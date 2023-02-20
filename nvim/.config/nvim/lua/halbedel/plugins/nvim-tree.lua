@@ -13,6 +13,9 @@ nvimtree.setup({
 	view = {
 		adaptive_size = true,
 	},
+	git = {
+		timeout = 1000,
+	},
 })
 
 local function open_nvim_tree()
