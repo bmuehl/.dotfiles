@@ -34,6 +34,20 @@ mason_lspconfig.setup_handlers({
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 	end,
+	["eslint"] = function()
+		lspconfig["eslint"].setup({
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+				"vue",
+				"astro",
+			},
+		})
+	end,
 	["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua
 })
 
