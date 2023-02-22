@@ -51,7 +51,7 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 
 	-- vs-code like icons
-	use("kyazdani42/nvim-web-devicons")
+	use("nvim-tree/nvim-web-devicons")
 
 	-- buffer tabs
 	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
