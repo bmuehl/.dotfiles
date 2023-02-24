@@ -43,8 +43,7 @@ keymap.set("x", "<leader>p", '"_dP')
 ----------------------
 
 -- nvim-tree
-keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>") -- file explorer
-keymap.set("n", "<leader><C-f>", ":NvimTreeToggle<CR>") -- file explorer
+keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>") -- file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -66,11 +65,10 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 keymap.set("n", "<leader>bla", ":Gitsigns toggle_current_line_blame<CR>")
 keymap.set("n", "<leader>dif", ":Gitsigns diffthis<CR>")
 
--- barbar
+-- bufferline
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>") -- move to previous
 keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>") -- move to next
-keymap.set("n", "<leader>b", "<cmd>BufferLinePick<CR>") -- go to buffer x
-keymap.set("n", "<leader>B", "<cmd>BufferLinePickClose<CR>") -- close buffer x
+keymap.set("n", "<C-c>", "<cmd>bdelete!<CR>") -- delete current buffer
 keymap.set("n", "<C-h>", "<cmd>BufferLineCloseLeft<CR>") -- close buffer on the left
 keymap.set("n", "<C-l>", "<cmd>BufferLineCloseRight<CR>") -- close buffer on the right
 
