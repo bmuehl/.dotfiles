@@ -1,7 +1,7 @@
 -- set colorscheme with protected call in case it isn't installed
 local status, nord = pcall(require, "nord")
 if not status then
-	print("Colorscheme not found!") -- print error if colorscheme not installed
+	print("Colorscheme not found!")
 	return
 end
 

@@ -47,10 +47,21 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	-- use("nvim-tree/nvim-tree.lua")
 
 	-- vs-code like icons
 	use("nvim-tree/nvim-web-devicons")
+
+	-- file explorer
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	})
 
 	-- buffer tabs
 	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
@@ -103,7 +114,8 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-	use("kdheepak/lazygit.nvim") -- lazygit integration
+
+	use("akinsho/toggleterm.nvim") -- terminal integration
 
 	use("github/copilot.vim") -- github copilot
 

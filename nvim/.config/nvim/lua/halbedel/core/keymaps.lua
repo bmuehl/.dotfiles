@@ -43,7 +43,7 @@ keymap.set("x", "<leader>p", '"_dP')
 ----------------------
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>") -- file explorer
+keymap.set("n", "<leader>e", ":Neotree reveal<CR>") -- file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -71,6 +71,3 @@ keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>") -- move to next
 keymap.set("n", "<C-c>", "<cmd>bdelete!<CR>") -- delete current buffer
 keymap.set("n", "<C-h>", "<cmd>BufferLineCloseLeft<CR>") -- close buffer on the left
 keymap.set("n", "<C-l>", "<cmd>BufferLineCloseRight<CR>") -- close buffer on the right
-
--- lazygit
-keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
