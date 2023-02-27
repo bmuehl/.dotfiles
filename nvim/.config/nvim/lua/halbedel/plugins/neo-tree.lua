@@ -26,6 +26,7 @@ if not status then
 end
 local named_colors = require("nord.named_colors")
 
+-- not supported by nord theme yet
 vim.api.nvim_set_hl(0, "NeoTreeDirectoryIcon", { fg = named_colors.teal })
 vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = named_colors.teal })
 
