@@ -42,7 +42,7 @@ keymap.set("x", "<leader>p", '"_dP')
 -- Plugin Keybinds
 ----------------------
 
--- nvim-tree
+-- neo-tree
 keymap.set("n", "<leader>e", ":Neotree reveal<CR>") -- file explorer
 
 -- telescope
@@ -68,6 +68,6 @@ keymap.set("n", "<leader>dif", ":Gitsigns diffthis<CR>")
 -- bufferline
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>") -- move to previous
 keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>") -- move to next
-keymap.set("n", "<C-c>", "<cmd>bdelete!<CR>") -- delete current buffer
+keymap.set("n", "<C-c>", "<cmd>lua CloseCurrentBuffer()<CR>", { noremap = true, silent = true }) -- delete current buffer
 keymap.set("n", "<C-h>", "<cmd>BufferLineCloseLeft<CR>") -- close buffer on the left
 keymap.set("n", "<C-l>", "<cmd>BufferLineCloseRight<CR>") -- close buffer on the right
