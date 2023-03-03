@@ -43,7 +43,7 @@ keymap.set("x", "<leader>p", '"_dP')
 ----------------------
 
 -- neo-tree
-keymap.set("n", "<leader>e", ":Neotree reveal<CR>") -- file explorer
+keymap.set("n", "<leader>e", ":Neotree reveal<CR>", { noremap = true, silent = true }) -- file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
