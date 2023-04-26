@@ -5,7 +5,7 @@ abbr -a gp --position anywhere "git push"
 abbr -a lg --position anywhere "lazygit"
 
 # bobthefish - theme config
-set -g theme_color_scheme nord
+set -g theme_color_scheme terminal
 set -g theme_nerd_fonts yes
 set -g theme_newline_cursor yes
 set -g theme_display_git_default_branch yes

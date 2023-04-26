@@ -1,13 +1,13 @@
 -- set colorscheme with protected call in case it isn't installed
-local status, nord = pcall(require, "nord")
+local status, catppuccin = pcall(require, "catppuccin")
 if not status then
 	print("Colorscheme not found!")
 	return
 end
 
-vim.g.nord_disable_background = true
-vim.g.nord_italic = false
+catppuccin.setup({
+	flavor = "frappe",
+	transparent_background = true,
+})
 
-nord.set()
-
-vim.cmd([[colorscheme nord]])
+vim.cmd([[colorscheme catppuccin-frappe]])

@@ -8,6 +8,7 @@ k9s:
   readOnly: false
   noExitOnCtrlC: false
   noIcons: false
+  skipLatestRevCheck: false
   logger:
     tail: 500
     buffer: 5000
@@ -25,7 +26,7 @@ k9s:
         favorites:
         - default
       view:
-        active: po
+        active: context
       featureGates:
         nodeShell: false
       shellPod:
@@ -36,6 +37,7 @@ k9s:
         limits:
           cpu: 100m
           memory: 100Mi
+        labels: {}
       portForwardAddress: localhost
   thresholds:
     cpu:

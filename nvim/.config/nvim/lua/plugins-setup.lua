@@ -32,7 +32,7 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("shaunsingh/nord.nvim") -- preferred colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" }) -- preferred colorscheme
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings ysw)

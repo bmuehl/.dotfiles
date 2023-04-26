@@ -4,9 +4,6 @@ if not status then
 	return
 end
 
--- get lualine theme
-local theme = require("lualine.themes.nord")
-
 local function os_icon()
 	local icons = {
 		unix = "", -- e712
@@ -24,9 +21,6 @@ end
 
 -- configure lualine with modified theme
 lualine.setup({
-	options = {
-		theme = theme,
-	},
 	sections = {
 		lualine_x = { "encoding", os_icon, "filetype" },
 	},
