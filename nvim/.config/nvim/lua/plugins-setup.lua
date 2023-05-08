@@ -65,6 +65,7 @@ return packer.startup(function(use)
 
 	-- buffer tabs
 	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
+	use("ojroques/nvim-bufdel")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")

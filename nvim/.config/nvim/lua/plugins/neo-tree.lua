@@ -8,7 +8,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 neotree.setup({
 	window = {
-		auto_expand_width = true,
+		auto_expand_width = false, -- toggle with e
 	},
 	filesystem = {
 		filtered_items = {
