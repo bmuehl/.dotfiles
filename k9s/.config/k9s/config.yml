@@ -21,13 +21,13 @@ k9s:
   clusters:
     docker-desktop:
       namespace:
-        active: all
+        active: default
         lockFavorites: false
         favorites:
         - all
         - default
       view:
-        active: context
+        active: pods
       featureGates:
         nodeShell: false
       shellPod:
