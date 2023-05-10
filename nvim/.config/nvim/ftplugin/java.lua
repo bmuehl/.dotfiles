@@ -24,6 +24,8 @@ end
 
 local jdtls_install = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
 local lombok = jdtls_install .. "/lombok.jar"
+-- to setup format on save
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -75,7 +77,14 @@ local config = {
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	-- for a list of options
 	settings = {
-		java = {},
+		java = {
+			format = {
+				settings = {
+					url = "../utils/SIM.xml",
+					profile = "SIM",
+				},
+			},
+		},
 	},
 
 	-- Language server `initializationOptions`
@@ -88,6 +97,29 @@ local config = {
 	init_options = {
 		bundles = {},
 	},
+
+	-- configure format on save
+	on_attach = function(current_client, bufnr)
+		if current_client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({
+						timeout_ms = 2000,
+						filter = function(clients)
+							return vim.tbl_filter(function(client)
+								return pcall(function(_client)
+									return _client.config.settings.autoFixOnSave or false
+								end, client) or false
+							end, clients)
+						end,
+					})
+				end,
+			})
+		end
+	end,
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
