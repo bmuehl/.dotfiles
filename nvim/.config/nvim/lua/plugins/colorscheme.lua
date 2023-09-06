@@ -8,6 +8,11 @@ return {
 		catppuccin.setup({
 			flavor = "mocha",
 			transparent_background = false,
+			integrations = {
+				mason = true,
+				leap = true,
+				neotree = true,
+			},
 		})
 
 		vim.cmd([[colorscheme catppuccin-mocha]])

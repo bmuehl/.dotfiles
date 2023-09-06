@@ -22,20 +22,5 @@ return {
 				},
 			},
 		})
-
-		-- define custom highlight groups
-		local status = pcall(require, "catppuccin")
-		if not status then
-			print("Colorscheme not found!")
-			return
-		end
-		local named_colors = require("catppuccin.palettes").get_palette("mocha")
-
-		-- not supported by theme yet
-		vim.api.nvim_set_hl(0, "NeoTreeDimText", { fg = named_colors.overlay0 })
-		vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { fg = named_colors.overlay0 })
-
-		vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { fg = named_colors.peach })
-		vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = named_colors.peach })
 	end,
 }
