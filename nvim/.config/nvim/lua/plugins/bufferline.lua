@@ -4,7 +4,6 @@ return {
 	version = "*",
 	config = function()
 		local bufferline = require("bufferline")
-		local mocha = require("catppuccin.palettes").get_palette "frappe"
 
 		bufferline.setup({
 			highlights = require("catppuccin.groups.integrations.bufferline").get(),
@@ -18,9 +17,8 @@ return {
 						separator = true,
 					},
 				},
-				mode = "tabs",
-				separator_style = {"", ""},
-			}
+				separator_style = { "", "" },
+			},
 		})
-	end
+	end,
 }
