@@ -17,7 +17,7 @@ return {
 						separator = true,
 					},
 				},
-				separator_style = { "", "" },
+				separator_style = "slant",
 			},
 		})
 	end,

@@ -3,8 +3,8 @@ return {
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
 	},
 	config = function()
 		local neotree = require("neo-tree")
@@ -29,7 +29,7 @@ return {
 			print("Colorscheme not found!")
 			return
 		end
-		local named_colors = require("catppuccin.palettes").get_palette("frappe")
+		local named_colors = require("catppuccin.palettes").get_palette("mocha")
 
 		-- not supported by theme yet
 		vim.api.nvim_set_hl(0, "NeoTreeDimText", { fg = named_colors.overlay0 })
@@ -37,5 +37,5 @@ return {
 
 		vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged", { fg = named_colors.peach })
 		vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = named_colors.peach })
-	end
+	end,
 }
