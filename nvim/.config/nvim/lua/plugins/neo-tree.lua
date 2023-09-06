@@ -10,6 +10,7 @@ return {
 		local neotree = require("neo-tree")
 
 		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+		vim.cmd([[ set fillchars+=vert:\▏]]) -- set vertical split char to reduce margin
 
 		neotree.setup({
 			window = {
