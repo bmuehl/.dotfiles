@@ -1,27 +1,29 @@
--- import lualine plugin safely
-local status, lualine = pcall(require, "lualine")
-if not status then
-	return
-end
+return {
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		local lualine = require("lualine")
 
-local function os_icon()
-	local icons = {
-		unix = "", -- e712
-		dos = "", -- e70f
-		mac = "", -- e711
-	}
-	if vim.fn.has("mac") == 1 then
-		return icons.mac
-	elseif vim.fn.has("win32") == 1 then
-		return icons.dos
-	else
-		return icons.unix
+		local function os_icon()
+			local icons = {
+				unix = "", -- e712
+				dos = "", -- e70f
+				mac = "", -- e711
+			}
+			if vim.fn.has("mac") == 1 then
+				return icons.mac
+			elseif vim.fn.has("win32") == 1 then
+				return icons.dos
+			else
+				return icons.unix
+			end
+		end
+
+		-- configure lualine with modified theme
+		lualine.setup({
+			sections = {
+				lualine_x = { "encoding", os_icon, "filetype" },
+			},
+		})
 	end
-end
-
--- configure lualine with modified theme
-lualine.setup({
-	sections = {
-		lualine_x = { "encoding", os_icon, "filetype" },
-	},
-})
+}

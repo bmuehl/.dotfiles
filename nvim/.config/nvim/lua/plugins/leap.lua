@@ -1,8 +1,7 @@
--- import leap plugin safely
-local setup, leap = pcall(require, "leap")
-if not setup then
-	return
-end
-
--- enable leap
-leap.add_default_mappings()
+return {
+	"ggandor/leap.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		require('leap').add_default_mappings()
+	end
+}
