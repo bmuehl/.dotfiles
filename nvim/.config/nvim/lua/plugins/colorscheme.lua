@@ -12,6 +12,8 @@ return {
 				mason = true,
 				leap = true,
 				neotree = true,
+				noice = true,
+				notify = true,
 			},
 		})
 
