@@ -9,8 +9,8 @@ SETUVAR _fish_abbr_gr:\x2e/gradlew
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_n:pnpm
 SETUVAR _fish_abbr_nx:pnpm\x20nx
-SETUVAR _fish_abbr_ter:terraform
 SETUVAR _fish_abbr_t:tmux
+SETUVAR _fish_abbr_ter:terraform
 SETUVAR _fish_abbr_v:vim
 SETUVAR fish_color_autosuggestion:4c566a
 SETUVAR fish_color_cancel:\x2d\x2dreverse
@@ -51,4 +51,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/bernhard\x2emuehl/Library/Python/3\x2e10/bin
+SETUVAR fish_user_paths:/Users/bernhard\x2emuehl/\x2espicetify\x1e/Users/bernhard\x2emuehl/Library/Python/3\x2e10/bin

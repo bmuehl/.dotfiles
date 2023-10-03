@@ -32,3 +32,4 @@ set -gx LC_CTYPE "en_US.UTF-8"
 set -gx PHP_CS_FIXER_IGNORE_ENV true # delete after php-cs-fixer update
 
 ulimit -n 100000 # increase max open files
+fish_add_path /Users/bernhard.muehl/.spicetify

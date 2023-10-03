@@ -19,12 +19,12 @@
 #: heavy. Setting them manually is useful for font families that have
 #: many weight variants like Book, Medium, Thick, etc. For example::
 
-#:     font_family      Operator Mono Book
-#:     bold_font        Operator Mono Medium
-#:     italic_font      Operator Mono Book Italic
-#:     bold_italic_font Operator Mono Medium Italic
+font_family      JetBrainsMono Nerd Font Mono Regular
+bold_font        JetBrainsMono Nerd Font Mono Bold
+italic_font      JetBrainsMono Nerd Font Mono Italic
+bold_italic_font JetBrainsMono Nerd Font Mono Bold Italic
 
-# font_size 11.0
+font_size 13.0
 
 #: Font size (in pts)
 
@@ -168,7 +168,7 @@
 #: placed in the cell. For example::
 
 #:     modify_font cell_width 80%
-#:     modify_font cell_height -2px
+#:     modify_font cell_height +2px
 #:     modify_font baseline 3
 
 #: Note that modifying the baseline will automatically adjust the
@@ -771,7 +771,7 @@
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations no
+hide_window_decorations titlebar-only
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only can be used to only hide the titlebar.
@@ -2287,3 +2287,9 @@
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Mocha
+include current-theme.conf
+# END_KITTY_THEME
