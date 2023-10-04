@@ -124,3 +124,5 @@ local config = {
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
 jdtls.start_or_attach(config)
+
+vim.cmd("setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab") -- Set indentation
