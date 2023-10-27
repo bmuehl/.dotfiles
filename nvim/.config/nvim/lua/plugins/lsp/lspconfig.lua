@@ -61,7 +61,18 @@ return {
 					},
 				})
 			end,
-			["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua
+			["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua,
+			["volar"] = function()
+				lspconfig["volar"].setup({
+					filetypes = { "vue" },
+					init_options = {
+						typescript = {
+							tsdk =
+							"/Users/bernhard.muehl/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib", -- fix volar error
+						},
+					},
+				})
+			end,
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {
