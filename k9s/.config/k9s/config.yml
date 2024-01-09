@@ -1,4 +1,5 @@
 k9s:
+  liveViewAutoRefresh: false
   refreshRate: 2
   maxConnRetry: 5
   enableMouse: false
@@ -24,10 +25,11 @@ k9s:
         active: default
         lockFavorites: false
         favorites:
+        - kube-system
         - all
         - default
       view:
-        active: pod
+        active: pods
       featureGates:
         nodeShell: false
       shellPod:
