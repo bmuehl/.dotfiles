@@ -47,20 +47,6 @@ return {
 					},
 				})
 			end,
-			["eslint"] = function()
-				lspconfig["eslint"].setup({
-					filetypes = {
-						"javascript",
-						"javascriptreact",
-						"javascript.jsx",
-						"typescript",
-						"typescriptreact",
-						"typescript.tsx",
-						"vue",
-						"astro",
-					},
-				})
-			end,
 			["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua,
 			["volar"] = function()
 				lspconfig["volar"].setup({

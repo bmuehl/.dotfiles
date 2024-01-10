@@ -44,12 +44,13 @@ return {
 						"$FILENAME",
 					},
 				}), -- php formatter
-				diagnostics.eslint_d.with({
+				diagnostics.eslint.with({
 					-- only enable eslint if root has .eslintrc.js
 					condition = function(utils)
-						return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
+						return utils.root_has_file(".eslintrc.js") or
+						utils.root_has_file(".eslintrc.json")                                         -- change file extension if you use something else
 					end,
-				}),                                      -- js/ts linter
+				}),                                                                               -- js/ts linter
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)

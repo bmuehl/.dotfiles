@@ -6,4 +6,5 @@ return {
 	"windwp/nvim-ts-autotag",         -- autoclose tags
 	"mfussenegger/nvim-jdtls",        -- java lsp
 	"christoomey/vim-tmux-navigator", -- navigate between vim and tmux panes
+	"editorconfig/editorconfig-vim",  -- editorconfig
 }
