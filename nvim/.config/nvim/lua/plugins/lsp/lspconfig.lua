@@ -94,7 +94,10 @@ return {
 		end
 
 		vim.diagnostic.config({
-			virtual_text = true, -- Turn on/off inline diagnostics
+			-- virtual_text = false, -- Turn on/off inline diagnostics
+			virtual_text = {
+				prefix = "",
+			},
 		})
 
 		-- Show all diagnostics on current line in floating window
