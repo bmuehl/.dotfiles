@@ -18,6 +18,7 @@ return {
 			},
 			on_close = function()
 				require("neo-tree.sources.manager").refresh("filesystem")
+				vim.cmd([[:silent! :bufdo :edit]]) -- reload all open buffers
 			end,
 		})
 
