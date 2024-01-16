@@ -49,11 +49,24 @@ return {
 			end,
 			["tsserver"] = function()
 				lspconfig["tsserver"].setup({
-					init_options = {
-						preferences = {
-							disableSuggestions = true,
-						},
+					handlers = {
+						["textDocument/publishDiagnostics"] = function(_, params, _) -- disable tsserver diagnostics 80001
+							if params.diagnostics then
+								for i, v in ipairs(params.diagnostics) do
+									if v.code == 80001 then
+										table.remove(params.diagnostics, i)
+									end
+								end
+							end
+							vim.lsp.diagnostic.on_publish_diagnostics(_, params, _)
+						end,
 					},
+					-- if you want to disable all tsserver diagnostics
+					-- init_options = {
+					-- 	preferences = {
+					-- 		disableSuggestions = true,
+					-- 	},
+					-- },
 					on_attach = function(client)
 						-- disable tsserver formatting if you plan on formatting via null-ls
 						client.server_capabilities.documentFormattingProvider = false
