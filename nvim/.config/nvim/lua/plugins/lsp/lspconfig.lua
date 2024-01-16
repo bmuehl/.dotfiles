@@ -47,6 +47,20 @@ return {
 					},
 				})
 			end,
+			["tsserver"] = function()
+				lspconfig["tsserver"].setup({
+					init_options = {
+						preferences = {
+							disableSuggestions = true,
+						},
+					},
+					on_attach = function(client)
+						-- disable tsserver formatting if you plan on formatting via null-ls
+						client.server_capabilities.documentFormattingProvider = false
+						client.server_capabilities.documentRangeFormattingProvider = false
+					end,
+				})
+			end,
 			["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua,
 			["volar"] = function()
 				lspconfig["volar"].setup({
