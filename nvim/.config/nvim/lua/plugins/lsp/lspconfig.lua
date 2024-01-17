@@ -92,19 +92,19 @@ return {
 					vim.keymap.set(mode, lhs, rhs, opts)
 				end
 
-				bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")          -- Displays hover information about the symbol under the cursor
-				bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")    -- Jump to the definition
-				bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")   -- Jump to declaration
-				bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>") -- Lists all the implementations for the symbol under the cursor
-				bufmap("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>") -- Jumps to the definition of the type symbol
-				bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")    -- Lists all the references
+				bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")             -- Displays hover information about the symbol under the cursor
+				bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")       -- Jump to the definition
+				bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")      -- Jump to declaration
+				bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")   -- Lists all the implementations for the symbol under the cursor
+				bufmap("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")  -- Jumps to the definition of the type symbol
+				bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")       -- Lists all the references
 				bufmap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>") -- Displays a function's signature information
-				bufmap("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>")      -- Renames all references to the symbol under the cursor
-				bufmap("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>") -- Selects a code action available at the current cursor position
-				bufmap("x", "<F4>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
-				bufmap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>") -- Show diagnostics in a floating window
-				bufmap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")  -- Move to the previous diagnostic
-				bufmap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")  -- Move to the next diagnostic
+				bufmap("n", "<Leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>")    -- Renames all references to the symbol under the cursor
+				bufmap("n", "<Leader>a", "<cmd>lua vim.lsp.buf.code_action()<cr>") -- Selects a code action available at the current cursor position
+				bufmap("x", "<Leader>a", "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
+				bufmap("n", "<Leader>d", "<cmd>lua vim.diagnostic.open_float()<cr>") -- Show diagnostics in a floating window
+				bufmap("n", "<Leader>p", "<cmd>lua vim.diagnostic.goto_prev()<cr>") -- Move to the previous diagnostic
+				bufmap("n", "<Leader>n", "<cmd>lua vim.diagnostic.goto_next()<cr>") -- Move to the next diagnostic
 			end,
 		})
 
@@ -123,29 +123,6 @@ return {
 			},
 		})
 
-		-- Show all diagnostics on current line in floating window
-		vim.api.nvim_set_keymap(
-			"n",
-			"<Leader>d",
-			":lua vim.diagnostic.open_float()<CR>",
-			{ noremap = true, silent = true }
-		)
-		-- Go to next diagnostic (if there are multiple on the same line, only shows
-		-- one at a time in the floating window)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<Leader>n",
-			":lua vim.diagnostic.goto_next()<CR>",
-			{ noremap = true, silent = true }
-		)
-		-- Go to prev diagnostic (if there are multiple on the same line, only shows
-		-- one at a time in the floating window)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<Leader>p",
-			":lua vim.diagnostic.goto_prev()<CR>",
-			{ noremap = true, silent = true }
-		)
 		-- Format current buffer
 		vim.api.nvim_set_keymap("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 	end,
