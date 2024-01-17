@@ -37,6 +37,9 @@ return {
 				"make",
 				"python",
 				"vue",
+				"comment",
+				"jsdoc",
+				"yaml",
 			},
 			-- auto install above language parsers
 			auto_install = true,
