@@ -61,6 +61,12 @@ return {
 							vim.lsp.diagnostic.on_publish_diagnostics(_, params, _)
 						end,
 					},
+					-- if you want to use ts/jsdoc on javascript files
+					-- settings = {
+					-- 	implicitProjectConfiguration = {
+					-- 		checkJs = true,
+					-- 	},
+					-- },
 					-- if you want to disable all tsserver diagnostics
 					-- init_options = {
 					-- 	preferences = {
