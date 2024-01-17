@@ -49,19 +49,9 @@ return {
 			end,
 			["tsserver"] = function()
 				lspconfig["tsserver"].setup({
-					handlers = {
-						["textDocument/publishDiagnostics"] = function(_, params, _) -- disable tsserver diagnostics 80001
-							if params.diagnostics then
-								for i, v in ipairs(params.diagnostics) do
-									if v.code == 80001 then
-										table.remove(params.diagnostics, i)
-									end
-								end
-							end
-							vim.lsp.diagnostic.on_publish_diagnostics(_, params, _)
-						end,
-					},
-					-- if you want to use ts/jsdoc on javascript files
+					-- note: use jsconfig.json / tscconfig.json files
+					--
+					-- if you want to use ts/jsdoc on javascript files globally
 					-- settings = {
 					-- 	implicitProjectConfiguration = {
 					-- 		checkJs = true,
