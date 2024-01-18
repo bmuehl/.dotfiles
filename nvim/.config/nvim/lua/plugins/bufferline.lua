@@ -1,7 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	event = "BufEnter",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons", "ojroques/nvim-bufdel" },
 	version = "*",
 	config = function()
 		local bufferline = require("bufferline")
@@ -19,6 +19,8 @@ return {
 					},
 				},
 				separator_style = "slant",
+				close_command = "BufDel! %d",
+				right_mouse_command = "BufDel! %d",
 			},
 			highlights = highlights,
 		})
