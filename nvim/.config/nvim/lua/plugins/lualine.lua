@@ -24,6 +24,10 @@ return {
 			sections = {
 				lualine_x = { "encoding", os_icon, "filetype" },
 			},
+			options = {
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
+			},
 		})
-	end
+	end,
 }
