@@ -5,7 +5,10 @@ return {
 	version = "*",
 	config = function()
 		local bufferline = require("bufferline")
-		local highlights = require("catppuccin.groups.integrations.bufferline").get()
+		local highlights = require("catppuccin.groups.integrations.bufferline").get()()
+		local named_colors = require("catppuccin.palettes").get_palette("mocha")
+
+		highlights["fill"]["bg"] = named_colors.surface1 -- set bg for transparent mode
 
 		bufferline.setup({
 			options = {
