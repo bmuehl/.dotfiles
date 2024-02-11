@@ -7,7 +7,7 @@ return {
 
 		catppuccin.setup({
 			flavor = "mocha",
-			transparent_background = false,
+			transparent_background = true,
 			integrations = {
 				mason = true,
 				leap = true,
