@@ -37,3 +37,4 @@ set -gx PHP_CS_FIXER_IGNORE_ENV true # delete after php-cs-fixer update
 
 ulimit -n 100000 # increase max open files
 fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/opt/python/libexec/bin
