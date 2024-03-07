@@ -57,7 +57,7 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")   -- list availabl
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 -- gitsigns
-keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
+keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>")
 keymap.set("n", "<leader>gd", ":Gitsigns diffthis<CR>")
 keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>")
 
