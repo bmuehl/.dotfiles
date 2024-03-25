@@ -84,6 +84,20 @@ return {
 			end,
 		})
 
+		-- organize imports on save
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			desc = "Organize imports",
+			pattern = "*.ts,*.js,*.tsx,*.jsx",
+			callback = function()
+				local params = {
+					command = "_typescript.organizeImports",
+					arguments = { vim.api.nvim_buf_get_name(0) },
+					title = "",
+				}
+				vim.lsp.buf_request_sync(0, "workspace/executeCommand", params, 1000) -- execute synchronously with 1s timeout
+			end,
+		})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "LSP actions",
 			callback = function()
