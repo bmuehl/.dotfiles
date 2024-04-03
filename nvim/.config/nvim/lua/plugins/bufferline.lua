@@ -9,7 +9,11 @@ return {
 		local named_colors = require("catppuccin.palettes").get_palette("mocha")
 
 		if highlights.fill.bg == "NONE" then
-			highlights.fill.bg = named_colors.surface1 -- set bg for transparent mode
+			local color = named_colors.base
+			highlights.fill.bg = color -- set bg for transparent mode
+			highlights.separator.fg = color
+			highlights.separator_selected.fg = color
+			highlights.separator_visible.fg = color
 		end
 
 		bufferline.setup({
