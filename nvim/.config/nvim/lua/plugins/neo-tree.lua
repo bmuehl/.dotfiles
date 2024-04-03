@@ -13,6 +13,7 @@ return {
 		vim.cmd([[ set fillchars+=vert:\▏]]) -- set vertical split char to reduce margin
 
 		neotree.setup({
+			auto_clean_after_session_restore = true,
 			window = {
 				auto_expand_width = false, -- toggle with e
 			},

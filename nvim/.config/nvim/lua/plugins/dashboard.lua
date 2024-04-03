@@ -9,6 +9,12 @@ return {
 					enable = true,
 				},
 				shortcut = {
+					{
+						desc = " Session Restore",
+						group = "DiagnosticHint",
+						action = "SessionRestore",
+						key = "w",
+					},
 					{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
 					{
 						icon = " ",
