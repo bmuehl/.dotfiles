@@ -22,7 +22,7 @@ return {
 						CursorLine = { bg = colors.surface1 },
 						LineNr = { fg = colors.blue },
 						EndOfBuffer = { fg = colors.blue },
-						NeoTreeWinSeparator = { fg = colors.base },
+						NeoTreeWinSeparator = { fg = colors.surface0 },
 					}
 				end
 			end,
