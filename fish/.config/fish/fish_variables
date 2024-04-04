@@ -14,7 +14,7 @@ SETUVAR _fish_abbr_ter:terraform
 SETUVAR _fish_abbr_v:vim
 SETUVAR fish_color_autosuggestion:4c566a
 SETUVAR fish_color_cancel:\x2d\x2dreverse
-SETUVAR fish_color_command:81a1c1
+SETUVAR fish_color_command:blue
 SETUVAR fish_color_comment:434c5e
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
