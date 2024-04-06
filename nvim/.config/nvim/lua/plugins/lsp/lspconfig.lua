@@ -136,8 +136,5 @@ return {
 				prefix = "",
 			},
 		})
-
-		-- Format current buffer
-		vim.api.nvim_set_keymap("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 	end,
 }
