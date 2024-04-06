@@ -41,10 +41,10 @@ return {
 			-- list of formatters & linters for mason to install
 			ensure_installed = {
 				"prettier", -- ts/js formatter
-				"stylua",   -- lua formatter
+				"stylua", -- lua formatter
 				"eslint_d", -- ts/js linter
-				"isort",    -- python formatter
-				"black",    -- python formatter
+				"isort", -- python formatter
+				"black", -- python formatter
 				"pylint",
 				"php-cs-fixer", -- php formatter
 			},

@@ -21,7 +21,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				php = { "php-cs-fixer" },
+				php = { "php_cs_fixer" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -30,7 +30,7 @@ return {
 			},
 		})
 
-		conform.formatters["php-cs-fixer"] = {
+		conform.formatters.php_cs_fixer = {
 			args = {
 				"--no-interaction",
 				"--quiet",
@@ -48,7 +48,7 @@ return {
 			conform.format({
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 2000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
