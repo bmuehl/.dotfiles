@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
@@ -45,29 +46,6 @@ return {
 						"svelte",
 						"php",
 					},
-				})
-			end,
-			["tsserver"] = function()
-				lspconfig["tsserver"].setup({
-					-- note: use jsconfig.json / tscconfig.json files
-					--
-					-- if you want to use ts/jsdoc on javascript files globally
-					-- settings = {
-					-- 	implicitProjectConfiguration = {
-					-- 		checkJs = true,
-					-- 	},
-					-- },
-					-- if you want to disable all tsserver diagnostics
-					-- init_options = {
-					-- 	preferences = {
-					-- 		disableSuggestions = true,
-					-- 	},
-					-- },
-					on_attach = function(client)
-						-- disable tsserver formatting if you plan on formatting via null-ls
-						client.server_capabilities.documentFormattingProvider = false
-						client.server_capabilities.documentRangeFormattingProvider = false
-					end,
 				})
 			end,
 			["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua,

@@ -25,6 +25,7 @@ return {
 						NeoTreeWinSeparator = { fg = colors.surface0 },
 					}
 				end
+				return {}
 			end,
 		})
 
