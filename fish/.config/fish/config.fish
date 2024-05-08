@@ -4,14 +4,6 @@ abbr -a ga --position anywhere "git add -A"
 abbr -a gp --position anywhere "git push"
 abbr -a lg --position anywhere "lazygit"
 
-# bobthefish - theme config
-set -g theme_color_scheme terminal
-set -g theme_nerd_fonts yes
-set -g theme_newline_cursor yes
-set -g theme_display_git_default_branch yes
-set -g fish_prompt_pwd_dir_length 3
-set -g theme_display_date no
-
 # kubectl
 kubectl completion fish | source
 
