@@ -17,7 +17,9 @@ return {
 			window = {
 				auto_expand_width = false, -- toggle with e
 			},
+			git_status_async = false,
 			filesystem = {
+				use_libuv_file_watcher = true,
 				filtered_items = {
 					visible = true,
 					hide_dotfiles = false,
