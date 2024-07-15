@@ -23,6 +23,8 @@ return {
 						LineNr = { fg = colors.blue },
 						EndOfBuffer = { fg = colors.blue },
 						NeoTreeWinSeparator = { fg = colors.surface0 },
+						DashboardHeader = { fg = colors.blue },
+						DashboardFooter = { fg = colors.surface2 },
 					}
 				end
 				return {}
