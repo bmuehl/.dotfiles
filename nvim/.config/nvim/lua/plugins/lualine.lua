@@ -3,6 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local lualine = require("lualine")
+		local colors = require("catppuccin.palettes").get_palette("mocha")
 
 		local function os_icon()
 			local icons = {
@@ -19,10 +20,26 @@ return {
 			end
 		end
 
+		local function recording()
+			local reg = vim.fn.reg_recording()
+			if reg == "" then
+				return ""
+			end -- not recording
+			return "recording @" .. reg
+		end
+
 		-- configure lualine with modified theme
 		lualine.setup({
 			sections = {
-				lualine_x = { "encoding", os_icon, "filetype" },
+				lualine_x = {
+					{
+						recording,
+						color = { fg = colors.pink },
+					},
+					"encoding",
+					os_icon,
+					"filetype",
+				},
 			},
 			options = {
 				section_separators = { left = "", right = "" },
