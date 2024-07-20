@@ -15,6 +15,8 @@ return {
 			highlights.separator_selected.fg = color
 			highlights.separator_visible.fg = color
 			highlights.buffer_visible.fg = named_colors.text
+			highlights.duplicate.fg = named_colors.overlay1
+			highlights.duplicate_visible.fg = named_colors.text
 		end
 
 		bufferline.setup({
