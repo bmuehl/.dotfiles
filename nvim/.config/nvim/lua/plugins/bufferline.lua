@@ -14,6 +14,7 @@ return {
 			highlights.separator.fg = color
 			highlights.separator_selected.fg = color
 			highlights.separator_visible.fg = color
+			highlights.buffer_visible.fg = named_colors.text
 		end
 
 		bufferline.setup({
