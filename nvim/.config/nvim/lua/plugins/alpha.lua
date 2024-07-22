@@ -22,7 +22,7 @@ return {
 		-- Set menu
 		dashboard.section.buttons.val = {
 			dashboard.button("n", "  > New File", "<cmd>ene<CR>"),
-			dashboard.button("e", "  > Toggle file explorer", "<cmd>Neotree<CR>"),
+			dashboard.button("e", "  > Toggle file explorer", "<cmd>Neotree<CR>"),
 			dashboard.button("ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("fs", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
 			dashboard.button("w", "󰁯  > Restore Session", "<cmd>SessionRestore<CR>"),
