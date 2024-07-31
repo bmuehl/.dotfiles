@@ -20,6 +20,4 @@ config.window_padding = {
 	bottom = 0,
 }
 
-config.strikethrough_position = 22
-
 return config
