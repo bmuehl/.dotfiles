@@ -5,13 +5,13 @@ local config = wezterm.config_builder()
 config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font("ComicCodeLigatures Nerd Font Mono")
-config.font_size = 14.5
+config.font_size = 13
 
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
 
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.85
 config.macos_window_background_blur = 11
 config.window_padding = {
 	left = 0,
@@ -20,6 +20,6 @@ config.window_padding = {
 	bottom = 0,
 }
 
-config.strikethrough_position = 12
+config.strikethrough_position = 22
 
 return config
