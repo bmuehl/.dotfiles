@@ -135,5 +135,12 @@ return {
 				prefix = "",
 			},
 		})
+
+		-- filetype http
+		vim.filetype.add({
+			extension = {
+				["http"] = "http",
+			},
+		})
 	end,
 }
