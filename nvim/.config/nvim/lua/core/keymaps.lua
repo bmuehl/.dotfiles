@@ -69,3 +69,6 @@ keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>") -- move to next
 keymap.set("n", "<leader>cc", "<cmd>:BufDel<CR>", { noremap = true, silent = true }) -- delete current buffer
 keymap.set("n", "<leader>co", "<cmd>:BufDelOthers<CR>", { noremap = true, silent = true }) -- delete other than current buffer
 keymap.set("n", "<leader>ca", "<cmd>:BufDelAll<CR>", { noremap = true, silent = true }) -- delete all buffers
+
+-- kulala
+keymap.set("n", "<leader>x", ":lua require('kulala').run()<CR>", { noremap = true, silent = true })
