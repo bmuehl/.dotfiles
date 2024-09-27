@@ -15,6 +15,7 @@ return {
 				neotree = true,
 				noice = true,
 				notify = true,
+				indent_blankline = true,
 			},
 			custom_highlights = function(colors)
 				if transparent_background then
