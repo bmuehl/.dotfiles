@@ -22,9 +22,12 @@ return {
 					return {
 						CursorLine = { bg = colors.surface1 },
 						LineNr = { fg = colors.blue },
-						EndOfBuffer = { fg = colors.blue },
+						EndOfBuffer = { fg = colors.surface1 },
 						DashboardHeader = { fg = colors.blue },
 						DashboardFooter = { fg = colors.surface2 },
+						NeoTreeNormal = { bg = colors.mantle },
+						NeoTreeNormalNC = { bg = colors.mantle },
+						NeoTreeWinSeparator = { bg = colors.mantle, fg = colors.mantle },
 					}
 				end
 				return {}

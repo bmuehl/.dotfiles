@@ -9,7 +9,7 @@ return {
 		local named_colors = require("catppuccin.palettes").get_palette("mocha")
 
 		if highlights.fill.bg == "NONE" then
-			local color = named_colors.base
+			local color = named_colors.mantle
 			highlights.fill.bg = color -- set bg for transparent mode
 			highlights.separator.fg = color
 			highlights.separator_selected.fg = color
@@ -17,6 +17,7 @@ return {
 			highlights.buffer_visible.fg = named_colors.text
 			highlights.duplicate.fg = named_colors.overlay1
 			highlights.duplicate_visible.fg = named_colors.text
+			highlights.offset_separator = { fg = named_colors.mantle, bg = named_colors.mantle }
 		end
 
 		bufferline.setup({
