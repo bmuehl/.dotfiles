@@ -7,8 +7,9 @@ return {
 		local bufferline = require("bufferline")
 		local highlights = require("catppuccin.groups.integrations.bufferline").get()()
 		local named_colors = require("catppuccin.palettes").get_palette("mocha")
+		local transparent = highlights.fill.bg == "NONE"
 
-		if highlights.fill.bg == "NONE" then
+		if transparent then
 			local color = named_colors.mantle
 			highlights.fill.bg = color -- set bg for transparent mode
 			highlights.separator.fg = color
@@ -28,7 +29,7 @@ return {
 						filetype = "neo-tree",
 						text = "File Explorer",
 						text_align = "center",
-						separator = true,
+						separator = transparent,
 					},
 				},
 				separator_style = "slant",
