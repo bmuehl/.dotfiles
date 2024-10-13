@@ -7,19 +7,11 @@ return {
 		local bufferline = require("bufferline")
 		local highlights = require("catppuccin.groups.integrations.bufferline").get()()
 		local named_colors = require("catppuccin.palettes").get_palette("mocha")
-		local transparent = highlights.fill.bg == "NONE"
+		local isTransparent = highlights.fill.bg == "NONE"
 
-		if transparent then
-			local color = named_colors.mantle
-			highlights.fill.bg = color -- set bg for transparent mode
-			highlights.separator.fg = color
-			highlights.separator_selected.fg = color
-			highlights.separator_visible.fg = color
-			highlights.buffer_visible.fg = named_colors.text
-			highlights.duplicate.fg = named_colors.overlay1
-			highlights.duplicate_visible.fg = named_colors.text
-			highlights.offset_separator = { fg = named_colors.mantle, bg = named_colors.mantle }
-		end
+		highlights.buffer_visible.fg = named_colors.text
+		highlights.duplicate.fg = named_colors.overlay1
+		highlights.duplicate_visible.fg = named_colors.text
 
 		bufferline.setup({
 			options = {
@@ -29,7 +21,7 @@ return {
 						filetype = "neo-tree",
 						text = "File Explorer",
 						text_align = "center",
-						separator = transparent,
+						separator = isTransparent,
 					},
 				},
 				separator_style = "slant",
