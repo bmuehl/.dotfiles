@@ -5,8 +5,8 @@ return {
 	---@type ibl.config
 	opts = {
 		scope = {
-			-- char = "▏",
-			enabled = false,
+			char = "▎",
+			enabled = true,
 		},
 		indent = {
 			char = "▏",

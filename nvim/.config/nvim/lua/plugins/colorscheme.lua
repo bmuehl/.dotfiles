@@ -22,6 +22,8 @@ return {
 					CursorLine = { bg = colors.surface1 },
 					LineNr = { fg = colors.surface1 },
 					EndOfBuffer = { fg = colors.surface1 },
+					IblIndent = { fg = colors.surface1 },
+					IblScope = { fg = colors.surface2 },
 				}
 			end,
 		})
