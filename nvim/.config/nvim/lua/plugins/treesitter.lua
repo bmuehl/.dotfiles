@@ -5,6 +5,9 @@ return {
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
+			sync_install = false,
+			ignore_install = {},
+			modules = {},
 			-- enable syntax highlighting
 			highlight = {
 				enable = true,
