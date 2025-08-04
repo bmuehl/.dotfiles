@@ -22,5 +22,5 @@ set -gx PNPM_HOME "$HOME/Library/pnpm"
 set -gx PHP_CS_FIXER_IGNORE_ENV true
 
 # Tide prompt configuration
-set -g _tide_left_items vi_mode os pwd git newline
+set -g _tide_left_items vi_mode pwd git newline
 set -g _tide_right_items status cmd_duration context jobs node python java ruby kubectl
