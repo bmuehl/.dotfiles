@@ -7,80 +7,76 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
+		-- Configure lua_ls with custom settings
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					diagnostics = {
+						globals = {
+							"vim",
+							"require",
+						},
+					},
+					workspace = {
+						-- make language server aware of runtime files
+						library = {
+							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+							[vim.fn.stdpath("config") .. "/lua"] = true,
+						},
+					},
+				},
+			},
+		})
 
-		-- auto setup mason lsp
-		mason_lspconfig.setup_handlers({
-			function(server_name) -- default handler (optional)
-				lspconfig[server_name].setup({})
-			end,
-			["lua_ls"] = function()
-				lspconfig["lua_ls"].setup({
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
-							workspace = {
-								-- make language server aware of runtime files
-								library = {
-									[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-									[vim.fn.stdpath("config") .. "/lua"] = true,
-								},
-							},
-						},
-					},
-				})
-			end,
-			["emmet_ls"] = function()
-				lspconfig["emmet_ls"].setup({
-					filetypes = {
-						"html",
-						"typescriptreact",
-						"javascriptreact",
-						"css",
-						"sass",
-						"scss",
-						"less",
-						"svelte",
-						"php",
-					},
-				})
-			end,
-			["jdtls"] = function() end, -- jdtls is configured in ftplugin/java.lua,
-			["volar"] = function()
-				lspconfig["volar"].setup({
-					filetypes = { "vue" },
-					init_options = {
-						typescript = {
-							tsdk = "/Users/bernhard.muehl/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib", -- fix volar error
-						},
-					},
-				})
-			end,
-			["cssls"] = function()
+		-- Configure emmet_ls with custom filetypes
+		vim.lsp.config("emmet_ls", {
+			filetypes = {
+				"html",
+				"typescriptreact",
+				"javascriptreact",
+				"css",
+				"sass",
+				"scss",
+				"less",
+				"svelte",
+				"php",
+			},
+		})
+
+		-- Configure volar for Vue
+		vim.lsp.config("volar", {
+			filetypes = { "vue" },
+			init_options = {
+				typescript = {
+					tsdk = "/Users/bernhard.muehl/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib", -- fix volar error
+				},
+			},
+		})
+
+		-- Configure cssls with custom capabilities and settings
+		vim.lsp.config("cssls", {
+			capabilities = (function()
 				local capabilities = vim.lsp.protocol.make_client_capabilities()
 				capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-				lspconfig["cssls"].setup({
-					capabilities = capabilities,
-					settings = {
-						css = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-						scss = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
+				return capabilities
+			end)(),
+			settings = {
+				css = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
 					},
-				})
-			end,
+				},
+				scss = {
+					validate = true,
+					lint = {
+						unknownAtRules = "ignore",
+					},
+				},
+			},
 		})
 
 		-- organize imports on save

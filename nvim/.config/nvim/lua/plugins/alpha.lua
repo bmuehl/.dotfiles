@@ -30,7 +30,7 @@ return {
 			dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
 		}
 
-		local version_lines = vim.split(vim.api.nvim_exec("version", true), "\n", {})
+		local version_lines = vim.split(vim.api.nvim_exec2("version", { output = true }).output, "\n", {})
 		dashboard.section.footer.val = {
 			"󰀘  " .. version_lines[2],
 		}
