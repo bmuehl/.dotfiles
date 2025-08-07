@@ -8,8 +8,13 @@ return {
 			window = {
 				position = "vertical",
 			},
+			keymaps = {
+				toggle = {
+					normal = "<leader> ",
+					terminal = "<leader> ",
+				},
+			},
 		})
-
 		vim.keymap.set("n", "<leader>ac", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
 	end,
 }
