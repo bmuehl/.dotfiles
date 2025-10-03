@@ -17,3 +17,5 @@ fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/python/libexec/bin
 fish_add_path $GOPATH/bin
 fish_add_path "$PNPM_HOME"
+
+export PATH="$HOME/.local/bin:$PATH"
