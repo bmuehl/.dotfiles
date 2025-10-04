@@ -25,7 +25,7 @@ return {
 			dashboard.button("e", "  > Toggle file explorer", "<cmd>Neotree<CR>"),
 			dashboard.button("ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("fs", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
-			dashboard.button("w", "󰁯  > Restore Session", "<cmd>SessionRestore<CR>"),
+			dashboard.button("w", "󰁯  > Restore Session", "<cmd>AutoSession restore<CR>"),
 			dashboard.button("u", "󰊳  > Update Lazy", "<cmd>Lazy update<CR>"),
 			dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
 		}
