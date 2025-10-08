@@ -49,3 +49,4 @@ opt.encoding = "UTF-8"
 
 -- file handling
 opt.autoread = true -- automatically read file when changed outside of vim
+opt.swapfile = false -- don't create swapfile
