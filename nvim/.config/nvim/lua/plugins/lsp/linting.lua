@@ -32,17 +32,33 @@ return {
 			callback = function()
 				local ft = vim.bo.filetype
 				local js_types = { "javascript", "typescript", "javascriptreact", "typescriptreact" }
-				if not vim.tbl_contains(js_types, ft) then
+
+				if vim.tbl_contains(js_types, ft) then
+					local fname = vim.api.nvim_buf_get_name(0)
+					local eslint_config = vim.fs.root(fname, {
+						".eslintrc",
+						".eslintrc.js",
+						".eslintrc.json",
+						".eslintrc.yml",
+						".eslintrc.yaml",
+						"eslint.config.js",
+						"eslint.config.mjs",
+						"eslint.config.cjs",
+					})
+					if not eslint_config then
+						return
+					end
+
+					local original_cwd = vim.fn.getcwd()
+					local node_modules_dir = find_nearest_node_modules_dir()
+					if node_modules_dir then
+						vim.cmd("cd " .. node_modules_dir)
+					end
 					lint.try_lint()
-					return
+					vim.cmd("cd " .. original_cwd)
+				else
+					lint.try_lint()
 				end
-				local original_cwd = vim.fn.getcwd()
-				local node_modules_dir = find_nearest_node_modules_dir()
-				if node_modules_dir then
-					vim.cmd("cd " .. node_modules_dir)
-				end
-				lint.try_lint()
-				vim.cmd("cd " .. original_cwd)
 			end,
 		})
 

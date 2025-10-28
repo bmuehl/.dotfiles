@@ -79,6 +79,16 @@ return {
 			},
 		})
 
+		vim.lsp.config("ts_ls", {
+			workspace_required = true,
+			root_markers = { "package.json" },
+		})
+
+		vim.lsp.config("denols", {
+			workspace_required = true,
+			root_markers = { "deno.json", "deno.jsonc" },
+		})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "LSP actions",
 			callback = function()
