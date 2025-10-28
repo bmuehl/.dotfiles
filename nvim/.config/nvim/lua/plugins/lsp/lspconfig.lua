@@ -7,6 +7,27 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		-- Find the root directory based on markers in the file system
+		local function find_topmost_root(fname, markers)
+			local root = vim.fs.root(fname, markers)
+			if not root then
+				return nil
+			end
+
+			local current = vim.fs.dirname(root)
+			while current and current ~= "/" do
+				local parent_root = vim.fs.root(current, markers)
+				if parent_root and parent_root ~= root then
+					root = parent_root
+					current = vim.fs.dirname(root)
+				else
+					break
+				end
+			end
+
+			return root
+		end
+
 		-- Configure lua_ls with custom settings
 		vim.lsp.config("lua_ls", {
 			settings = {
@@ -81,12 +102,24 @@ return {
 
 		vim.lsp.config("ts_ls", {
 			workspace_required = true,
-			root_markers = { "package.json" },
+			root_dir = function(bufnr, on_dir)
+				local fname = vim.api.nvim_buf_get_name(bufnr)
+				local root = find_topmost_root(fname, { "package.json" })
+				if root then
+					on_dir(root)
+				end
+			end,
 		})
 
 		vim.lsp.config("denols", {
 			workspace_required = true,
-			root_markers = { "deno.json", "deno.jsonc" },
+			root_dir = function(bufnr, on_dir)
+				local fname = vim.api.nvim_buf_get_name(bufnr)
+				local root = find_topmost_root(fname, { "deno.json", "deno.jsonc" })
+				if root then
+					on_dir(root)
+				end
+			end,
 		})
 
 		vim.api.nvim_create_autocmd("LspAttach", {

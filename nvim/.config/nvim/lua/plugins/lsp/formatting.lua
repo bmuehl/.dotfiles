@@ -4,12 +4,21 @@ return {
 	config = function()
 		local conform = require("conform")
 
+		-- Helper to choose formatter based on project type
+		local function deno_or_prettier(bufnr)
+			local fname = vim.api.nvim_buf_get_name(bufnr)
+			if vim.fs.root(fname, { "deno.json", "deno.jsonc" }) then
+				return {} -- Use LSP fallback (denols)
+			end
+			return { "prettier" }
+		end
+
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
+				javascript = deno_or_prettier,
+				typescript = deno_or_prettier,
+				javascriptreact = deno_or_prettier,
+				typescriptreact = deno_or_prettier,
 				svelte = { "prettier" },
 				css = { "prettier" },
 				scss = { "prettier" },
