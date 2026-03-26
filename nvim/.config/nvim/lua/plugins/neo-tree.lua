@@ -14,7 +14,8 @@ return {
 			window = {
 				auto_expand_width = false, -- toggle with e
 			},
-			git_status_async = false,
+			enable_git_status = true,
+			git_status_async = true,
 			filesystem = {
 				-- use_libuv_file_watcher = true, - This will use the OS level file watchers (currently broken)
 				filtered_items = {
