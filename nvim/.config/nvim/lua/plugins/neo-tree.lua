@@ -3,8 +3,8 @@ return {
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
+		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
 		local neotree = require("neo-tree")
@@ -16,7 +16,7 @@ return {
 			},
 			git_status_async = false,
 			filesystem = {
-				use_libuv_file_watcher = true,
+				-- use_libuv_file_watcher = true, - This will use the OS level file watchers (currently broken)
 				filtered_items = {
 					visible = true,
 					hide_dotfiles = false,
