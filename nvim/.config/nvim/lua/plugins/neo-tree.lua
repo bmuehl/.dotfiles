@@ -17,7 +17,7 @@ return {
 			enable_git_status = true,
 			git_status_async = true,
 			filesystem = {
-				-- use_libuv_file_watcher = true, - This will use the OS level file watchers (currently broken)
+				use_libuv_file_watcher = true, -- This will use the OS level file watchers
 				filtered_items = {
 					visible = true,
 					hide_dotfiles = false,
