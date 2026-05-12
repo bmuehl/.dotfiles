@@ -45,6 +45,7 @@ return {
 			-- list of formatters & linters for mason to install
 			ensure_installed = {
 				"prettier", -- ts/js formatter
+				"oxfmt", -- prettier-compatible formatter
 				"stylua", -- lua formatter
 				"eslint_d", -- ts/js linter
 				"oxlint", -- ts/js linter

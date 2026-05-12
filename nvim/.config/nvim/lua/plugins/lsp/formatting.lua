@@ -4,13 +4,15 @@ return {
 	config = function()
 		local conform = require("conform")
 
+		local prettier_alternatives = { "oxfmt", "prettier", stop_after_first = true }
+
 		-- Helper to choose formatter based on project type
 		local function deno_or_prettier(bufnr)
 			local fname = vim.api.nvim_buf_get_name(bufnr)
 			if vim.fs.root(fname, { "deno.json", "deno.jsonc" }) then
 				return {} -- Use LSP fallback (denols)
 			end
-			return { "prettier" }
+			return prettier_alternatives
 		end
 
 		conform.setup({
@@ -20,13 +22,13 @@ return {
 				javascriptreact = deno_or_prettier,
 				typescriptreact = deno_or_prettier,
 				svelte = { "prettier" },
-				css = { "prettier" },
-				scss = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
+				css = prettier_alternatives,
+				scss = prettier_alternatives,
+				html = prettier_alternatives,
+				json = prettier_alternatives,
+				yaml = prettier_alternatives,
+				markdown = prettier_alternatives,
+				graphql = prettier_alternatives,
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
